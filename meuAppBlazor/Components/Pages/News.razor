@@ -1,0 +1,53 @@
+@page "/noticias"
+@using System.Runtime.CompilerServices
+@attribute [StreamRendering]
+@attribute [ExcludeFromInteractiveRouting]
+<h1>Notícias</h1>
+@if (noticias == null){
+    <p><em>Carregando...</em></p>
+}
+else{
+    <div class="noticias-container">
+        @foreach(var noticia in noticias)
+        {
+            <article class="noticias-item">
+                <h3>@noticia.Titulo</h3>
+                <p>@noticia.Resumo</p>
+                <hr />
+            </article>
+        }
+
+    </div>
+}
+@code {
+    private List<Noticia>? noticias;
+    public class Noticia
+    {
+        public string Titulo { get; set; }
+        public DateTime DataPublicacao { get; set; } = DateTime.Now;
+        public string Resumo { get; set; } = string.Empty;
+
+        public Noticia(string titulo, DateTime data,string resumo)
+        {
+            Titulo = titulo;
+            DataPublicacao = data;
+            Resumo = resumo;
+        }
+    }
+    
+    private List<Noticia> GetNoticias(){
+        return new List<Noticia>
+        {
+            new Noticia("Blazor lança nova versão", DateTime.Now.AddDays(-1), "A nova versão do Blazor traz melhorias significativas de desempenho e novas funcionalidades."),
+            new Noticia("C# 11 disponível", DateTime.Now.AddDays(-2), "A Microsoft anunciou o lançamento do C# 11, com várias novas características para desenvolvedores."),
+            new Noticia("ASP.NET Core 7 lançado", DateTime.Now.AddDays(-3), "O ASP.NET Core 7 foi oficialmente lançado, oferecendo suporte aprimorado para aplicações web modernas.")
+        };
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        // Simula um atraso para carregar as notícias
+        await Task.Delay(2000);
+        noticias = GetNoticias();
+    }
+    
+}
