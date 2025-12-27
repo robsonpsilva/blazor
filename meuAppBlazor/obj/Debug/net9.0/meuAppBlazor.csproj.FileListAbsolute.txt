@@ -76,3 +76,4 @@ C:\Users\cmrs\OneDrive - PETROBRAS\Documents\GitHub\blazor\meuAppBlazor\obj\Debu
 C:\Users\cmrs\OneDrive - PETROBRAS\Documents\GitHub\blazor\meuAppBlazor\obj\Debug\net9.0\meuAppBlazor.pdb
 C:\Users\cmrs\OneDrive - PETROBRAS\Documents\GitHub\blazor\meuAppBlazor\obj\Debug\net9.0\meuAppBlazor.genruntimeconfig.cache
 C:\Users\cmrs\OneDrive - PETROBRAS\Documents\GitHub\blazor\meuAppBlazor\obj\Debug\net9.0\ref\meuAppBlazor.dll
+C:\Users\cmrs\OneDrive - PETROBRAS\Documents\GitHub\blazor\meuAppBlazor\obj\Debug\net9.0\meuAppBlazor.sourcelink.json
